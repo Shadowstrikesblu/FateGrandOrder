@@ -1,12 +1,18 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
+<script>
+import { defineComponent } from '@vue/runtime-core'
 import HelloWorld from './components/HelloWorld.vue'
+export default defineComponent({
+  components: {HelloWorld},
+  computed:{},
+  methods:{
+
+  }
+})
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/pngegg.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <img alt="Vue logo" src="./assets/fgo.png" />
+  <HelloWorld/>
 </template>
 
 <style>
