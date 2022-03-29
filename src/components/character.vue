@@ -1,23 +1,25 @@
 <template>
 
-<div class="perso">
+<Characters v-for="character in characters" 
+    :key="character.id" 
+    :name="character.name" />
 
 
-
-</div>
 
 </template>
 
 <script>
 
 import { defineComponent } from "vue";
+import Characters from "./characters.vue";
 
 export default defineComponent({
-    props:{
-        character:{
-            Type : Object,
+    props: {
+        character: {
+            Type: Object,
         }
-    }
+    },
+    components: { Characters }
 })
 
 </script>
