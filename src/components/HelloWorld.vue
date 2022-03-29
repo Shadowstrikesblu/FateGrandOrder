@@ -10,7 +10,7 @@ export default defineComponent({
       }
     },
     mounted(){
-      axios.get("https://api.atlasacademy.io/nice/NA/servant/113",{
+      axios.get("https://api.atlasacademy.io/basic/NA/servant/search?lang=en&type=normal&flag=normal&rarity=5&rarity=4&className=saber&gender=female" ,{
 
       }).then((resultats)=>{
         this.characters.push(resultats.data)
@@ -25,7 +25,7 @@ export default defineComponent({
     <li v-for="chara in characters" :key="chara" >
       <li v-for="char in chara" :key="char">
         {{char}}
-      </li>
+        </li>
     </li>
   </ul>
 </template>
