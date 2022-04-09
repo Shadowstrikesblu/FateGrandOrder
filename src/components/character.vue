@@ -1,9 +1,12 @@
 <template>
-
-<Characters v-for="character in characters" 
-    :key="character.id" 
-    :name="character.name" />
-
+<div>
+    <h1>
+        {{HelloWorld.name}}
+    </h1>
+    <h2>
+        {{HelloWorld.id}}
+    </h2>
+</div>
 
 
 </template>
@@ -11,7 +14,7 @@
 <script>
 
 import { defineComponent } from "vue";
-import Characters from "./characters.vue";
+import HelloWorld from "./HelloWorld.vue";
 
 export default defineComponent({
     props: {
