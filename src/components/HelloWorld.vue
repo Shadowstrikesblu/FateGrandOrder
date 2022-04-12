@@ -1,7 +1,9 @@
 <script>
-import { ref } from 'vue';
+// import { ref } from 'vue';
 // import axios from 'axios';
+
 import { defineComponent } from 'vue';
+
 //coucou le pull
 export default defineComponent({
     props: ['name','face','atk','category','hp','rarity'],
@@ -36,6 +38,7 @@ div{
   transition: 0.3s;
   width: 10%;
   margin:5%;
+  display: inline-block;
   /* background-color: gold; */
 }
 .card:hover {

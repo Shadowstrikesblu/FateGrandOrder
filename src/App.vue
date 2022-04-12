@@ -1,39 +1,13 @@
 <script>
 import { defineComponent } from '@vue/runtime-core'
-// import HelloWorld from './components/HelloWorld.vue'
-import Characters from './components/HelloWorld.vue'
-import axios from 'axios'
-
+// // import HelloWorld from './components/HelloWorld.vue'
+// import Characters from './components/HelloWorld.vue'
+// import axios from 'axios'
+import store from './store'
 
 
 export default defineComponent({
-  // components:{
-  //   // Header,
-  //   Characters
-  // },
-  //   data(){
-  //     return{
-  //        characters:[],
-  //        NP:[]
-  //     }
-  //   },
-  //   mounted(){
-  //     axios.get("https://api.atlasacademy.io/basic/NA/servant/search?lang=en&excludeCollectionNo=0&type=normal" ,{
 
-  //     }).then((servants)=>{
-  //       // this.characters.push(resultats.data)
-  //       this.characters = (servants.data)
-  //       // console.log(servants.data)
-        
-  //     })
-  //   },
-    // mounted(){
-    //   axios.get("https://api.atlasacademy.io/basic/NA/NP/search?card=buster&lang=en" ,{
-    //   }).then((buster)=>{
-    //     this.NP = (buster.data)
-    //     console.log(buster.data)
-    //   })
-    // },
 })
 
 </script>
@@ -66,12 +40,12 @@ export default defineComponent({
   }
   body{
     background-image: url("./assets/mainmenu.png");
-    /* background-size: 150%; */
+    background-size: 100%;  
+    background-attachment: fixed;
     
   }
   .nav{
     background-color: #b3cdd1 ;
-    position: fixed;
     overflow: hidden;
     padding: 10px;
     text-align: center;
