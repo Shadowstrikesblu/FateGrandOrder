@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "vgauge": "^1.2.12-rc3",
     "vue": "^3.2.25",
+    "vue-gauge": "^1.0.3",
     "vue-router": "^4.0.14"
   },
   "devDependencies": {

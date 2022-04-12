@@ -20,20 +20,20 @@ export default defineComponent({
       }).then((servants)=>{
         // this.characters.push(resultats.data)
         this.characters = (servants.data)
-        // console.log(servants.data)
+        console.log(servants.data)
         
       })
     }
 })
 </script>
 <template>
-        <Characters v-for=" character  in characters"
+        <Characters v-for=" character  in characters.slice(0,21)"
           :key="character.id" 
           :name="character.name"
           :char="character" 
           :face="character.face"
           :atk="character.atkMax"
-          :class="character.className"
+          :category="character.className"
           :hp="character.hpMax"
           :rarity="character.rarity">
         </Characters>

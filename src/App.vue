@@ -56,7 +56,7 @@ export default defineComponent({
     src: url("https://fonts.google.com/specimen/Open+Sans");
   }
   div{
-    font-family: fgofont;
+    font-family: sans-serif;
   }
   .center{
     display: block;
@@ -87,4 +87,5 @@ a:hover{
     background-color:yellow;
     height:20%;
 }
+
 </style>

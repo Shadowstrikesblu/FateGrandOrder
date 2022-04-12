@@ -4,7 +4,7 @@ import { ref } from 'vue';
 import { defineComponent } from 'vue';
 //coucou le pull
 export default defineComponent({
-    props: ['name','face'],
+    props: ['name','face','atk','category','hp','rarity'],
 });
 
 </script>
@@ -12,7 +12,7 @@ export default defineComponent({
 <template>
   <div class="card">
     <div class="container">
-      <router-link :to="{name:'Details',params:{name : name }}" >{{name}}</router-link>
+      <router-link :to="{name:'Details',params:{name : name,atk: atk ,face: face,category:category,hp:hp,rarity:rarity} }" >{{name}}</router-link>
     <br>
     <img :src="face" v-bind:alt="Face">
     </div>
@@ -40,6 +40,6 @@ div{
 }
 .card:hover {
   box-shadow: 0 32px 64px 0 rgba(0,0,0,0.2);
-}
+} 
 
 </style>
