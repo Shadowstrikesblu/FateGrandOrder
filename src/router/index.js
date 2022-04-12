@@ -7,7 +7,7 @@ import Servants from '../components/Servants.vue';
 const routes = [
   {
     path: "/",
-    component: Home,
+    component: Servants,
   },
 
   {
