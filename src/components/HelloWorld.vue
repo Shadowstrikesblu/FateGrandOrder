@@ -5,27 +5,53 @@
 // import { defineComponent } from 'vue';
 
 //coucou le pull
-export default ({
-    props: ['name','face','atk','category','hp','rarity','npname',],
-    created(){
-      console.log(JSON.parse(JSON.stringify(this.npname)));
-      const npdet = JSON.parse(JSON.stringify(this.npname)) 
-      // console.log('coucou',target)
-       
-    },
-});
-
+export default {
+  props: ["name", "face", "atk", "category", "hp", "rarity", "npname"],
+  //les différents éléments hérités du composant Characters
+  data() {
+    return {
+      npdet: [],
+      npdesc: [],
+      npimg: [],
+    };
+  },
+  created() {
+    console.log(JSON.parse(JSON.stringify(this.npname[0])));
+    this.npdet = JSON.parse(JSON.stringify(this.npname[0].name));
+    this.npdesc = JSON.parse(JSON.stringify(this.npname[0].detail));
+    this.npimg = JSON.parse(JSON.stringify(this.npname[0].icon));
+    //Certains éléments auxquels on veut accéder sont contenus dans un array multidimensionnel
+    //et donc nous devons appeler ces fonctons pour pouvoir les afficher( ici on veut afficher le Noble Phantasm)
+    //On utilise Json.stringify pour passer le contenu de l'array en string (JSON) puis
+    //On utilise Json.parse pour convertir le Json en objet car je trouve l'exploitation plus simple 
+  },
+};
 </script>
 
 <template>
+<!-- ces différents éléments seront passés dans la route en tant que paramètre -->
   <div class="card">
     <div class="container">
-      <router-link :to="{name:'Details',params:
-      {name : name,atk: atk ,face: face,category:category,hp:hp,rarity:rarity,npdet:npname,atkname:atkname}}">
-      {{name}}
+      <router-link
+        :to="{
+          name: 'Details',
+          params: {
+            name: name,
+            atk: atk,
+            face: face,
+            category: category,
+            hp: hp,
+            rarity: rarity,
+            npdet: npdet,
+            npdesc: npdesc,
+            npimg: npimg,
+          },
+        }"
+      >
+        {{ name }}
       </router-link>
-    <br>
-    <img :src="face" v-bind:alt="Face">
+      <br />
+      <img :src="face" />
     </div>
   </div>
 </template>
@@ -34,24 +60,22 @@ export default ({
 a {
   color: #42b983;
 }
-div{
+div {
   text-align: center;
   /* display: inline; */
 }
-.container{
+.container {
   padding: 2px 4px;
-
 }
-.card{
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 10%;
-  margin:5%;
+  margin: 5%;
   display: inline-block;
   /* background-color: gold; */
 }
 .card:hover {
-  box-shadow: 0 32px 64px 0 rgba(0,0,0,0.2);
-} 
-
+  box-shadow: 0 32px 64px 0 rgba(0, 0, 0, 0.2);
+}
 </style>

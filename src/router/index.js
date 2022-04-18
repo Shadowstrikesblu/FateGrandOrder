@@ -1,37 +1,34 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import Home from '../App.vue';
-import Details from '../components/Details.vue';
-import Servants from '../components/Servants.vue';
+import Home from "../App.vue";
+import Details from "../components/Details.vue";
+import Servants from "../components/Servants.vue";
+import Acceuil from "../components/Acceuil.vue";
 
 // Nous créons d'abord nos Routes
 const routes = [
   {
     path: "/",
+    component: Acceuil,
+  },
+
+  {
+    name: "Details",
+    path: "/Details/:name?",
+    component: Details,
+    props: true,
+  },
+  {
+    path: "/Servants",
     component: Servants,
   },
-
-  {
-    name:'Details',
-    path: "/Details/:name?",
-    component:Details,
-    props:true,
-  },
-  {
-    path:"/Servants",
-    component:Servants,
-  },
-
 ];
 
-// export default createRouter({
-//   history: createWebHistory(),
-//   routes,
-// });
-export default  createRouter({
+
+export default createRouter({
   history: createWebHistory(),
   routes,
-})
+});
 
 // export default router;
 
