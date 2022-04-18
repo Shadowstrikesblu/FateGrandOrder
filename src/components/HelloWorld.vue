@@ -2,11 +2,17 @@
 // import { ref } from 'vue';
 // import axios from 'axios';
 
-import { defineComponent } from 'vue';
+// import { defineComponent } from 'vue';
 
 //coucou le pull
-export default defineComponent({
-    props: ['name','face','atk','category','hp','rarity'],
+export default ({
+    props: ['name','face','atk','category','hp','rarity','npname',],
+    created(){
+      console.log(JSON.parse(JSON.stringify(this.npname)));
+      const npdet = JSON.parse(JSON.stringify(this.npname)) 
+      // console.log('coucou',target)
+       
+    },
 });
 
 </script>
@@ -14,7 +20,10 @@ export default defineComponent({
 <template>
   <div class="card">
     <div class="container">
-      <router-link :to="{name:'Details',params:{name : name,atk: atk ,face: face,category:category,hp:hp,rarity:rarity} }" >{{name}}</router-link>
+      <router-link :to="{name:'Details',params:
+      {name : name,atk: atk ,face: face,category:category,hp:hp,rarity:rarity,npdet:npname,atkname:atkname}}">
+      {{name}}
+      </router-link>
     <br>
     <img :src="face" v-bind:alt="Face">
     </div>

@@ -15,8 +15,8 @@ export default defineComponent({
   <img class="center" alt="Vue logo" src="./assets/fgo.png" />
     <nav class="nav">
       <router-link to="/Servants">Liste des servants</router-link>
-      <router-link to="/">Evenements</router-link>
-      <router-link to="/">Nobles Phantasms</router-link>
+      <!-- <router-link to="/">Evenements</router-link>
+      <router-link to="/">Nobles Phantasms</router-link> -->
     </nav>
     <router-view/>
   <br>

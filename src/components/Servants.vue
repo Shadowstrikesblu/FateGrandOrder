@@ -3,7 +3,7 @@ import { defineComponent } from '@vue/runtime-core'
 import Characters from '../components/HelloWorld.vue'
 import axios from 'axios'
 
-export default defineComponent({
+export default ({
   components: {
     // Header,
     Characters
@@ -11,21 +11,23 @@ export default defineComponent({
   data() {
     return {
       characters: [],
-      NP: [],
       search: '',
+      // "https://api.atlasacademy.io/nice/NA/servant/search?excludeCollectionNo=0&type=normal&className=saber&attribute=human&lang=en"
+      //https://api.atlasacademy.io/basic/NA/servant/search?lang=en&excludeCollectionNo=0&type=normal
     }
   },
   mounted() {
-    axios.get("https://api.atlasacademy.io/basic/NA/servant/search?lang=en&excludeCollectionNo=0&type=normal", {
+    axios.get("https://api.atlasacademy.io/nice/NA/servant/search?excludeCollectionNo=0&type=normal&className=saber&lang=en", {
 
     }).then((servants) => {
-      // this.characters.push(resultats.data)
+      // this.characters.push(servants.data)
       this.characters = (servants.data)
       console.log(servants.data)
 
     })
 
   },
+
 
   computed: {
     filteredcharacters() {
@@ -53,11 +55,11 @@ export default defineComponent({
   </table>
 </div> -->
 
-  <input text="text" v-model="search" placeholder="search name" />
+  <input text="text" v-model="search" placeholder="Chercher un perso (en minuscules)" />
   <div v-if="search">
     <Characters v-for=" character  in filteredcharacters" :key="character.id" :name="character.name" :char="character"
-      :face="character.face" :atk="character.atkMax" :category="character.className" :hp="character.hpMax"
-      :rarity="character.rarity">
+      :face="character.extraAssets.faces.ascension[4]" :atk="character.atkMax" :category="character.className" :hp="character.hpMax"
+      :rarity="character.rarity" :npname="character.noblePhantasms">
     </Characters>
 
     <!-- <Characters :key="filteredcharacter.id" :name="filteredcharacter.name" :char="filteredcharacter"
@@ -68,13 +70,16 @@ export default defineComponent({
     </Characters> -->
   </div>
   <div v-else>
-    <Characters v-for=" character  in characters.slice(0, 21)" :key="character.id" :name="character.name"
-      :char="character" :face="character.face" :atk="character.atkMax" :category="character.className"
-      :hp="character.hpMax" :rarity="character.rarity">
+    <Characters v-for=" character  in characters" :key="character.id" :name="character.name"
+       :face="character.extraAssets.faces.ascension[4]" :atk="character.atkMax" :category="character.className"
+      :hp="character.hpMax" :rarity="character.rarity" :npname="character.noblePhantasms">
     </Characters>
   </div>
 
 </template>
 
 <style>
+input{
+  margin:1%;
+}
 </style>

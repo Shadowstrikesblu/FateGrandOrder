@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from '../App.vue';
 import Details from '../components/Details.vue';
 import Servants from '../components/Servants.vue';
+
 // Nous créons d'abord nos Routes
 const routes = [
   {
@@ -19,7 +20,8 @@ const routes = [
   {
     path:"/Servants",
     component:Servants,
-  }
+  },
+
 ];
 
 // export default createRouter({
