@@ -1,10 +1,15 @@
 <script scope>
 // import { defineComponent } from '@vue/runtime-core'
 import VGauge from "vgauge";
+import { defineComponent, ref, onMounted } from 'vue'
 
 export default {
   // name:'Details',
-
+  data(){
+    return{
+      select:"",
+    }
+  },
   props: [
     "name",
     "face",
@@ -16,10 +21,25 @@ export default {
     "npdet",
     "npdesc",
     "npimg",
+    "stage1",
+    "stage2",
+    "stage3",
+            
   ],
-  created() {
-    console.log(this.npimg);
+  methods:{
+    onChange: function(e){
+        var id = e.target.value;
+        // var name = e.target.options[e.target.options.selectedIndex].text;
+        this.select = id;
+        console.log('id ',id );
+        console.log(this.select);
+
+        // console.log('name ',name );
+    }
   },
+  created() {
+  },
+  
 };
 // console.log(atk)
 </script>
@@ -42,8 +62,24 @@ export default {
     <p>Rareté du personnage :{{ rarity }} étoiles</p>
     <p>Noble Phantasm : {{ npdet }}</p>
     <p>Description : {{ npdesc }}</p>
-    <img :src="npimg" v-bind:alt="npimg" class="icon" />
-  </div>
+    <!-- <img :src="npimg" v-bind:alt="npimg" class="icon" /> -->
+    {{id}}
+    <select v-on:change="onChange($event)" v-model="selected">
+      <option value="1" selected="selected">Stage 1</option>
+      <option value="2">Stage 2</option>
+      <option value="3">Stage 3</option>
+    </select>
+    <div v-if="this.select === '1'"> 
+    <img :src="stage1">
+    </div>
+    <div v-else-if="this.select === '2'"> 
+    <img :src="stage2">
+    </div>
+    <div v-else> 
+    <img :src="stage3">
+    </div>
+    
+    </div>
 </template>
 <style scoped>
 .container {
@@ -99,7 +135,7 @@ export default {
   margin-top: -23em;
   width: 20%;
   background-image: url("../assets/frame.jpg");
-  background-size: 100%;
+  background-size: cover;
   color: aliceblue;
   text-align: center;
 }

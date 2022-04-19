@@ -2,24 +2,32 @@
 // import { ref } from 'vue';
 // import axios from 'axios';
 
+
 // import { defineComponent } from 'vue';
 
 //coucou le pull
 export default {
-  props: ["name", "face", "atk", "category", "hp", "rarity", "npname"],
+  props: ["name", "face", "atk", "category", "hp", "rarity", "npname","perso"],
   //les différents éléments hérités du composant Characters
   data() {
     return {
       npdet: [],
       npdesc: [],
       npimg: [],
+      stage1:[],
+      stage2:[],
+      stage3:[],
     };
   },
   created() {
-    console.log(JSON.parse(JSON.stringify(this.npname[0])));
+    // console.log(JSON.parse(JSON.stringify(this.npname[0])));
+    console.log(JSON.parse(JSON.stringify(this.perso[1])));
     this.npdet = JSON.parse(JSON.stringify(this.npname[0].name));
     this.npdesc = JSON.parse(JSON.stringify(this.npname[0].detail));
     this.npimg = JSON.parse(JSON.stringify(this.npname[0].icon));
+    this.stage1 =JSON.parse(JSON.stringify(this.perso[1]));
+    this.stage2 =JSON.parse(JSON.stringify(this.perso[2]));
+    this.stage3 =JSON.parse(JSON.stringify(this.perso[3]));
     //Certains éléments auxquels on veut accéder sont contenus dans un array multidimensionnel
     //et donc nous devons appeler ces fonctons pour pouvoir les afficher( ici on veut afficher le Noble Phantasm)
     //On utilise Json.stringify pour passer le contenu de l'array en string (JSON) puis
@@ -46,6 +54,9 @@ export default {
             npdet: npdet,
             npdesc: npdesc,
             npimg: npimg,
+            stage1 : stage1,
+            stage2 : stage2,
+            stage3 : stage3,
           },
         }"
       >
