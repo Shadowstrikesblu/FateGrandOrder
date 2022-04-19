@@ -4,6 +4,7 @@ import VGauge from "vgauge";
 
 export default {
   // name:'Details',
+
   props: [
     "name",
     "face",
@@ -79,6 +80,7 @@ export default {
 .icon {
   width: 50%;
   height: 10%;
+  position: relative;
 }
 .title {
   color: rgb(251, 251, 246);

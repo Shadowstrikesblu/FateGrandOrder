@@ -30,6 +30,7 @@ export default {
 
 <template>
 <!-- ces différents éléments seront passés dans la route en tant que paramètre -->
+
   <div class="card">
     <div class="container">
       <router-link

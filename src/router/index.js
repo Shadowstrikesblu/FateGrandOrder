@@ -4,7 +4,7 @@ import Home from "../App.vue";
 import Details from "../components/Details.vue";
 import Servants from "../components/Servants.vue";
 import Acceuil from "../components/Acceuil.vue";
-
+import PageNotFound from "../components/PageNotFound.vue"
 // Nous créons d'abord nos Routes
 const routes = [
   {
@@ -22,6 +22,10 @@ const routes = [
     path: "/Servants",
     component: Servants,
   },
+  {
+    path:'/:pathMatch(.*)*',
+    component: PageNotFound,
+  }
 ];
 
 
