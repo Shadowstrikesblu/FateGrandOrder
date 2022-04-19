@@ -44,39 +44,44 @@ export default {
 // console.log(atk)
 </script>
 <template>
+<!-- <div class="wholecard">
   <div class="mycard">
     <div class="card">
       <h1 class="title">Servant Details</h1>
       <p class="title">{{ category }} : {{ name }}</p>
       <div class="container">
-        <!-- <p>{{class}}</p> -->
+         <p>{{class}}</p> 
         <div class="details">
           <img :src="face" v-bind:alt="face" class="center" />
         </div>
       </div>
     </div>
   </div>
+</div> -->
   <div class="mydesc">
+    <h1 class="title">Servant Details</h1>
+    <p class="title">{{ category }} : {{ name }}</p>
     <p>Attaque : {{ atk }}</p>
     <p>Nombre de Pts de Vie :{{ hp }}</p>
     <p>Rareté du personnage :{{ rarity }} étoiles</p>
     <p>Noble Phantasm : {{ npdet }}</p>
     <p>Description : {{ npdesc }}</p>
+    <img :src="face" v-bind:alt="face" class="center" />
     <!-- <img :src="npimg" v-bind:alt="npimg" class="icon" /> -->
-    {{id}}
     <select v-on:change="onChange($event)" v-model="selected">
-      <option value="1" selected="selected">Stage 1</option>
+      <option value="" disabled selected>Select the stage </option>
+      <option value="1">Stage 1</option>
       <option value="2">Stage 2</option>
       <option value="3">Stage 3</option>
     </select>
-    <div v-if="this.select === '1'"> 
-    <img :src="stage1">
+    <div v-if="this.select === '3'"> 
+    <img :src="stage3">
     </div>
     <div v-else-if="this.select === '2'"> 
     <img :src="stage2">
     </div>
     <div v-else> 
-    <img :src="stage3">
+    <img :src="stage1">
     </div>
     
     </div>
@@ -90,7 +95,7 @@ export default {
   width: 180px; */
 }
 
-.card {
+/* .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   width: 10%;
@@ -98,18 +103,18 @@ export default {
   height: 300px;
   width: 180px;
   /* background-image:url("../assets/frame.jpg"); */
-  background-image: url("https://static.wikia.nocookie.net/fategrandorder/images/0/0d/SaberBackGold.png/");
+  /* background-image: url("https://static.wikia.nocookie.net/fategrandorder/images/0/0d/SaberBackGold.png/");
   background-size: 100%;
-  text-align: center;
+  text-align: center; */
   /* margin:0 auto; */
   /* background-color: gold; */
-}
-.card:hover {
+/*} */
+/* .card:hover {
   box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.2);
-}
+} */
 .center {
   position: relative;
-  width: 100%;
+  width: 50%;
   /* height: 100%; */
   /* object-fit:cover;  */
 }
@@ -125,17 +130,19 @@ export default {
 .details {
   color: rgb(244, 244, 244);
 }
-.mycard {
+/* .mycard {
   margin-top: 80px;
-}
+} */
 .mydesc {
+  margin-top: 20%;
+
   position: relative;
   float: center;
   margin: 20%;
-  margin-top: -23em;
+  margin-top: 5em;
   width: 20%;
   background-image: url("../assets/frame.jpg");
-  background-size: cover;
+  background-size: 100%;
   color: aliceblue;
   text-align: center;
 }

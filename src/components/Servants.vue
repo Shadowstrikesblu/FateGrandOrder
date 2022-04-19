@@ -14,20 +14,23 @@ export default {
       search: "",
       // "https://api.atlasacademy.io/nice/NA/servant/search?excludeCollectionNo=0&type=normal&className=saber&attribute=human&lang=en"
       //https://api.atlasacademy.io/basic/NA/servant/search?lang=en&excludeCollectionNo=0&type=normal
+      //https://api.atlasacademy.io/nice/NA/servant/search?excludeCollectionNo=0&type=normal&className=saber&lang=en%22%20\
+      //https://api.atlasacademy.io/nice/NA/servant/search?excludeCollectionNo=0&rarity=4&rarity=5&rarity=3&className=saber&lang=en
+      //https://api.atlasacademy.io/nice/NA/servant/search?excludeCollectionNo=0&type=normal&className=saber&lang=en
     };
   },
   mounted() {
     axios
       .get(
         "https://api.atlasacademy.io/nice/NA/servant/search?excludeCollectionNo=0&type=normal&className=saber&lang=en",
-        {}
+        
       )
       .then((servants) => {
         // this.characters.push(servants.data)
         this.characters = servants.data;
         console.log(servants.data);
       });
-  },
+  },  
 
   //la fonction dans le mounted est l'appel D'api qui permet de récuperer les données désirées dans ce cas là, 4
   //toutes les données sur les Servants
