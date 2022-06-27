@@ -141,7 +141,8 @@ export default {
   margin: 20%;
   margin-top: 5em;
   width: 20%;
-  background-image: url("../assets/frame.jpg");
+  /* background-image: url("../assets/frame.jpg"); */
+  background-image: url("https://static.wikia.nocookie.net/typemoon/images/2/2c/Servant_%28carte%29.jpg/");
   background-size: 100%;
   color: aliceblue;
   text-align: center;

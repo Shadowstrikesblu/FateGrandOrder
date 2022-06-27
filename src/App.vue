@@ -8,7 +8,9 @@ import store from "./store";
 export default defineComponent({});
 </script>
 <template>
-  <img class="center" alt="Vue logo" src="./assets/fgo.png" />
+  <!-- <img class="center" alt="Vue logo" src="./assets/fgo.png" /> -->
+  <img class="center" alt="Vue logo" src="https://upload.wikimedia.org/wikipedia/fr/5/5f/Fate_Grand_Order_Logo.png" />
+
   <nav class="nav">
     <router-link to="/Servants">Liste des servants</router-link>
     <router-link to="/">Acceuil</router-link>
@@ -35,7 +37,8 @@ div {
   width: 40%;
 }
 body {
-  background-image: url("./assets/mainmenu.png");
+  /* background-image: url("./assets/mainmenu.png"); */
+  background-image: url("https://animetree.files.wordpress.com/2019/10/ars-goetia.jpg");
   background-size: 100%;
   background-attachment: fixed;
 }
