@@ -11,12 +11,12 @@
       fournies par le jeu
     </p>
   </div>
-    <div class="player-container">
+    <!-- <div class="player-container">
         <vue3-video-player
         @play="your_method"
         src="~@/assets/fgo.mp4"
         ></vue3-video-player>
-    </div>
+    </div> -->
 </template>
 
 <script>
