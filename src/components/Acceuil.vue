@@ -14,7 +14,7 @@
     <div class="player-container">
         <vue3-video-player
         @play="your_method"
-        src="../assets/fgo.mp4"
+        src="~@/assets/fgo.mp4"
         ></vue3-video-player>
     </div>
 </template>
